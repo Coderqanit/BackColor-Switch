@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+    <Style>
+        body{
+            background-color: white;
+        }
+        .circle{
+            background-color: black;
+            width: 110px;
+            border-radius:30px ;
+            margin: 100px;
+        }
+        .circular{
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            margin: 5px 5px 0 0px;
+            display: inline-block;
+            background-color: white;
+            padding:0 ;
+
+        
+        }
+          .circ{
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            margin: 5px 5px 0 0px;
+            display: inline-block;
+            background-color: black;
+            padding:0 ;
+            translate: 50%;
+          }
+
+
+     .ok{
+      display: flex;
+      width: 30px;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      margin: 5px;
+      
+     }
+      .day path {
+      fill: white;
+     }
+      
+     .moon path {
+      fill: black;
+     }
+      
+    
+    </Style>
+</head>
+<body>
+  
+<div class="circle"><span class="circular"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="ok moon day"> <path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg></span></div>
+<div class="sub"> 
+    <br>
+  <br>
+  <input type="text" placeholder="write something" id="name"  >
+  <button type="submit" class="btn" >submit</button>
+  <br>
+  <br>
+  <input type="text" >
+</div>
+  <script>
+
+let btn = document.querySelector('.btn')
+let name = document.querySelector('#name')
+
+btn.addEventListener('click', function(e){
+let name = e.target.value
+console.log(name)
+  
+})
+
+
+
+ let circular_dot = document.querySelector('.circular') 
+ let circular_cont = document.querySelector('.circle')
+ let circular_moon = document.querySelector('.moon')
+ circular_dot.addEventListener('click', function(){
+  
+    if(circular_dot.classList.contains('circular')){
+        console.log('hi')
+          
+          circular_dot.style.backgroundColor = 'black'
+            circular_dot.style.translate = '100%'
+    document.body.style.backgroundColor = 'black'
+     circular_cont.style.backgroundColor = 'white'
+
+     circular_moon.classList.remove('moon')
+        circular_dot.classList.remove('circular')
+        circular_dot.classList.add('circ')
+        
+    }else{
+        if(circular_dot.classList.contains('circ')){
+            console.log('hello world')
+             document.body.style.backgroundColor = 'white'
+              circular_dot.style.backgroundColor = 'white'
+              circular_cont.style.backgroundColor = 'black'
+              circular_dot.style.translate = '0%'
+               circular_dot.classList.add('circular')
+                 circular_moon.classList.add('moon')
+        }
+    }
+ })
+ 
+ name.addEventListener('click', function(){
+  
+ })
+  </script>
+</body>
+</html>
